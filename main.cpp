@@ -54,7 +54,7 @@ int main()
             long number = strtol(arguments, &endOfNumber, 0);
             if (!endOfNumber || *endOfNumber != '\0' //should point to the '\0' after the number in arguments
                 || number < -100 || number > 100) { 
-                cout << "ERROR" << endl;
+                cout << "ERROR:" << endl;
                 continue;
             }
             registers[reg] = number;
@@ -88,7 +88,7 @@ int main()
             
             int sum = registers[reg2] + registers[reg3];
             if (sum > 100 || sum < -100) {
-                cout << "ERROR" << endl;
+                cout << "ERROR: overflow" << endl;
                 continue; // next loop of the repl
             }
             
